@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(22, 22, 22);
+  padding: 1rem;
+}
+
+.card,
+.text button {
+  cursor: pointer;
+}
+
+.card__container {
+  margin-inline: auto;
+  max-width: 90rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  height: 30rem;
+  width: 20rem;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-align: center;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+  background-size: 130%;
+  position: relative;
+}
+
+.card::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  transition: 0.3s linear 0.1s;
+}
+
+.card:hover::before {
+  background: rgba(0, 0, 0, 0.329);
+}
+
+.card:first-child {
+  background-image: url("https://images.unsplash.com/photo-1514222134-b57cbb8ce073?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+}
+.card:nth-child(2) {
+  background-image: url("https://images.unsplash.com/photo-1532664189809-02133fee698d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=735&q=80");
+}
+.card:nth-child(3) {
+  background-image: url("https://images.unsplash.com/photo-1524230507669-5ff97982bb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=664&q=80");
+}
+.card:last-child {
+  background-image: url("https://images.unsplash.com/photo-1523544545175-92e04b96d26b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+}
+
+.card .text {
+  font-family: Arial;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 18rem;
+  transition: 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  position: relative;
+}
+
+.text p {
+  line-height: 1.5;
+}
+.text button {
+  padding: 0.5rem 1rem;
+  background: #000;
+  border: 1px solid white;
+  color: white;
+}
+
+.card:is(:hover, :focus-visible) .text {
+  margin: 0;
+  /* backdrop-filter: blur(2px); */
+}
+
+.card:is(:hover, :focus-visible):first-child {
+  background-size: 110%;
+}
+.card:is(:hover, :focus-visible):nth-child(2) {
+  background-size: 150%;
+}
+.card:is(:hover, :focus-visible):nth-child(3) {
+  background-size: 105%;
+}
+.card:is(:hover, :focus-visible):last-child {
+  background-size: 160%;
+}
+
+@media screen and (max-width: 350px) {
+  .card {
+    width: 15rem;
+    height: 26rem;
+  }
+}
